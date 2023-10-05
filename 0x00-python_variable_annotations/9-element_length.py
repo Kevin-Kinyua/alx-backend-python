@@ -13,10 +13,7 @@ def element_length(lst):
 import typing
 
 
-def safe_first_element(lst: typing.Sequence[typing.Any]) -> \
-        typing.Union[typing.Any, None]:
-    """Duck-typed annotation"""
-    if lst:
-        return lst[0]
-    else:
-        return None
+def element_length(lst: typing.Iterable[typing.Sequence]) -> \
+        typing.List[typing.Tuple[typing.Sequence, int]]:
+    """Returns a list of tuples"""
+    return [(i, len(i)) for i in lst]
